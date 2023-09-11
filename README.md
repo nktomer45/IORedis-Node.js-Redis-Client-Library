@@ -22,3 +22,24 @@ You can install ioRedis using npm or yarn:
 npm install ioredis
 # or
 yarn add ioredis
+
+const Redis = require('ioredis');
+
+const redis = new Redis({
+  host: 'localhost',
+  port: 6379,
+});
+
+redis.set('key', 'Hello, ioRedis!');
+redis.get('key', (err, result) => {
+  if (err) {
+    console.error('Error:', err);
+  } else {
+    console.log('Result:', result); // Should print "Result: Hello, ioRedis!"
+  }
+});
+
+// Remember to handle errors and close the connection when done.
+
+Make sure to replace the placeholders with your actual project details, including maintainer information, acknowledgments, and any additional sections that are relevant to your project. The README should provide clear instructions for users and potential contributors to understand and use your ioRedis project.
+
